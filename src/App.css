@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('assets/sf-pro-display-cufonfonts/SFPRODISPLAYREGULAR.OTF') format('otf'),
+         url('fonts/myfont.woff') format('woff'),
+         url('fonts/myfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.header{
+    font-family: 'MyCustomFont', sans-serif;
+    width: 100%;
+    /* background-color: red; */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ul_header{
+    display: flex;
+    align-items: center;
+    justify-items: space-between;
+    font-size: 0.8rem;
+}
+
+.ul_header li{
+    list-style: none;
+    /* padding: 10px; */
+    padding: 0 20px 0 20px;
+}
+
+.icons_right_header{
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
