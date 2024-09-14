@@ -1,0 +1,123 @@
+.ipad_nav{
+    background-color: #FAFAFC;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tabs{
+    width: 100%;
+    padding: 1% 10% 0 10%;
+    /* height: 10vh; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.small_tabs{
+    /* height: 8vh; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.small_tabs img{
+    /* width: 8vh; */
+    aspect-ratio: 1;
+}
+
+.small_tabs p{
+    font-size: 0.7rem;
+    padding: 5px;
+}
+
+.banner_bar{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 8% 10% 8% 10%;
+    align-items: center;
+    /* background-color: #FAFAFC; */
+}
+
+.banner_bar h1{
+    font-size: 4.5rem;
+    font-weight: 700;
+}
+
+.banner_bar p{
+    font-size: 1.5rem;
+    font-weight: 550;
+}
+
+.ad_video{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ad_video video{
+    width: 100%;
+    height: 100%;
+}
+
+.vido_tag_in{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Explore */
+
+.explore_head{
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 8% 10% 8% 10%;
+    align-items: center;
+}
+
+.explore_head h1{
+    font-size: 3rem;
+    font-weight: 550;
+}
+
+.explore_head p{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: blue;
+}
+
+.products{
+    display: flex;
+    justify-content: space-around;
+    padding:0 0 8% 10%;
+    align-items: center;
+    width: 100%;
+    height: 70vh;
+    /* background-color: red; */
+    overflow-x: scroll;
+    /* justify-items: space-around; */
+}
+
+.product-tile-header img{
+    /* padding: 0 20% 0 20%; */
+    width: 100%;
+    /* aspect-ratio: 1; */
+    height: auto;
+}
+
+.product-tile-header img:hover{
+    transform: scale(1.02);
+    transition: all 0.5s;
+}
+
