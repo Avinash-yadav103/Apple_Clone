@@ -101,9 +101,6 @@ function Ipad(props) {
                     )}
                 </IntersectionViewer>
 
-
-
-
             </div>
 
             <div className="explore">
@@ -115,15 +112,46 @@ function Ipad(props) {
                 <div className="products">
                     <div className="product-tile-header">
                         <img src={IpadPro} alt="" />
+                        <div className="colors_divs">
+                            <div className="colors"><div id="c1"></div></div>
+                            <div className="colors"><div id="c2"></div></div>
+                        </div>
+                        <h1>iPad Pro</h1>
+                        {/* <h2>The ultimate iPad experience with the most advanced technology.</h2> */}
                     </div>
                     <div className="product-tile-header">
                         <img src={IpadAir} alt="" />
+                        <div className="colors_divs">
+                            <div className="colors"><div id="c3"></div></div>
+                            <div className="colors"><div id="c4"></div></div>
+                            <div className="colors"><div id="c5"></div></div>
+                            <div className="colors"><div id="c6"></div></div>
+                        </div>
+                        <h1>iPad Air</h1>
+                        {/* <h2>Serious performance in a thin and light design.</h2> */}
                     </div>
                     <div className="product-tile-header">
                         <img src={IpadImg} alt="" />
+                        <div className="colors_divs">
+                            <div className="colors"><div id="c7"></div></div>
+                            <div className="colors"><div id="c8"></div></div>
+                            <div className="colors"><div id="c9"></div></div>
+                            <div className="colors"><div id="c10"></div></div>
+                        </div>
+                        <h1>iPad</h1>
+                        {/* <h2>The colourful, all‑screen iPad for the things you do every day.</h2> */}
+
                     </div>
                     <div className="product-tile-header">
                         <img src={IpadMini} alt="" />
+                        <div className="colors_divs">
+                            <div className="colors"><div id="c11"></div></div>
+                            <div className="colors"><div id="c12"></div></div>
+                            <div className="colors"><div id="c13"></div></div>
+                            <div className="colors"><div id="c14"></div></div>
+                        </div>
+                        <h1>iPad Mini</h1>
+                        {/* <h2>The full iPad experience in an ultra-portable design.</h2> */}
                     </div>
 
                 </div>
