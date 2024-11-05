@@ -1,6 +1,9 @@
 import React from 'react'
 import logo from './ipadairlogo.png'
 import mainipad from './main_ipad.png'
+import './css/ipad.css'
+
+
 
 function Hero(props) {
   return (

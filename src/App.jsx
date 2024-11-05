@@ -4,24 +4,28 @@ import './App.css'
 import Nav from './components/Nav.jsx'
 import Hero from './components/Hero.jsx'
 import Ipad from './components/Ipad.jsx'
+import Nav2 from './components/Nav2.jsx'
 import { Router, Routes, Route } from 'react-router-dom';
 // import Appp from './components/Appp.jsx'
+import IpadAir from './components/IpadAir.jsx'
+import "./components/css/ipad.css"
 
 
 function App() {
-  // const [count, setCount] = useState(0)
 
   return (
     <>
         <div className="whole">
           <Nav />
-          <Hero price="From ₹59900.00*" />
 
+
+          <Routes>
+          <Route path="/ipad" element={<Ipad />} />
+          <Route path="/ipadair" element={<IpadAir />} />
+          </Routes>
         </div>
 
-        <Routes>
-          <Route path="/ipad" element={<Ipad />} />
-        </Routes>
+        
 
 
     </>
