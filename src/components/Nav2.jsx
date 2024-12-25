@@ -1,12 +1,12 @@
 import React from 'react'
-import one from '../assets/Ipad/1.svg'
-import three from '../assets/Ipad/3.svg'
-import four from '../assets/Ipad/4.svg'
-import five from '../assets/Ipad/5.svg'
-import six from '../assets/Ipad/6.svg'
-import seven from '../assets/Ipad/7.svg'
-import eight from '../assets/Ipad/8.svg'
-import os from '../assets/Ipad/os.svg'
+// import imone from '../assets/Ipad/1.svg'
+// import imthree from '../assets/Ipad/3.svg'
+// import imfour from '../assets/Ipad/4.svg'
+// import imfive from '../assets/Ipad/5.svg'
+// import imsix from '../assets/Ipad/6.svg'
+// import imseven from '../assets/Ipad/7.svg'
+// import imeight from '../assets/Ipad/8.svg'
+// import imos from '../assets/Ipad/os.svg'
 
 
 function Nav2(props) {
@@ -14,39 +14,39 @@ function Nav2(props) {
     <div>
       <div className="tabs">
                     <div className="small_tabs">
-                        <img src={one} alt="" />
+                        <img src={props.imone} alt="" />
                         <p>{props.one}</p>
                     </div>
                     <div className="small_tabs">
-                        <img src={one} alt="" />
+                        <img src={props.imone} alt="" />
                         <p>{props.two}</p>
                     </div>
                     <div className="small_tabs">
-                        <img src={three} alt="" />
-                        <p>{props.tnree}</p>
+                        <img src={props.imthree} alt="" />
+                        <p>{props.three}</p>
                     </div>
                     <div className="small_tabs">
-                        <img src={four} alt="" />
+                        <img src={props.imfour} alt="" />
                         <p>{props.four}</p>
                     </div>
                     <div className="small_tabs">
-                        <img src={five} alt="" />
+                        <img src={props.imfive} alt="" />
                         <p>{props.five}</p>
                     </div>
                     <div className="small_tabs">
-                        <img src={six} alt="" />
+                        <img src={props.imsix} alt="" />
                         <p>{props.six}</p>
                     </div>
                     <div className="small_tabs">
-                        <img src={os} alt="" />
+                        <img src={props.imos} alt="" />
                         <p>{props.os}</p>
                     </div>
                     <div className="small_tabs">
-                        <img src={seven} alt="" />
+                        <img src={props.imseven} alt="" />
                         <p>{props.seven}</p>
                     </div>
                     <div className="small_tabs">
-                        <img src={eight} alt="" />
+                        <img src={props.imeight} alt="" />
                         <p>{props.eight}</p>
                     </div>
                 </div>

@@ -1,0 +1,33 @@
+.gt-top {
+    text-align: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.gt-top h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.gt-top p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.gt-top button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.gt-top button:hover {
+    background-color: #0056b3;
+}
+
+.gt-mid {
+    padding: 20px;
+}

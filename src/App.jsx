@@ -9,6 +9,7 @@ import { Router, Routes, Route } from 'react-router-dom';
 // import Appp from './components/Appp.jsx'
 import IpadAir from './components/IpadAir.jsx'
 import "./components/css/ipad.css"
+import Mac from './components/Mac.jsx'
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
 
 
           <Routes>
+          <Route path="/mac" element={<Mac />} />
           <Route path="/ipad" element={<Ipad />} />
           <Route path="/ipadair" element={<IpadAir />} />
           </Routes>

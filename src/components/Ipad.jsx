@@ -10,12 +10,20 @@ import IntersectionViewer from './IntersectionViewer';
 import Nav2 from './Nav2'
 import { Link } from 'react-router-dom';
 import "../App.css"
+import imone from '../assets/Ipad/1.svg'
+import imthree from '../assets/Ipad/3.svg'
+import imfour from '../assets/Ipad/4.svg'
+import imfive from '../assets/Ipad/5.svg'
+import imsix from '../assets/Ipad/6.svg'
+import imseven from '../assets/Ipad/7.svg'
+import imeight from '../assets/Ipad/8.svg'
+import imos from '../assets/Ipad/os.svg'
 
 function Ipad(props) {
     return (
         <>
             {/* <div className="ipad_nav"> */}
-            <Nav2 one="Ipad Pro" two="Ipad Air" three="Ipad" four="Ipad Mini" five="compare" six="six" os="os" seven="iPad OS 18" eight="Shop" />
+            <Nav2 imone={imone} imthree={imthree} imfour={imfour} imfive={imfive} imsix={imsix} imseven={imseven} imeight={imeight} imos={imos} one="Ipad Pro" two="Ipad Air" three="Ipad" four="Ipad Mini" five="compare" six="six" os="os" seven="iPad OS 18" eight="Shop" />
             {/* </div> */}
 
             <div className="banner_bar">
