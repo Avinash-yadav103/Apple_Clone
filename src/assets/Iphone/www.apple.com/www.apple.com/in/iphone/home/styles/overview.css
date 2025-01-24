@@ -1,0 +1,21 @@
+.sosumi-link-follows[data-pricing-loaded],
+.sosumi-link-follows[data-pricing-loaded]~.footnote,
+.sosumi-link-follows[data-pricing-loaded]~.product-addition {
+    display: inline-block;
+}
+
+.footnotes a{
+    color:#1d1d1f;
+    text-decoration: none;
+}
+
+.footnotes a:hover{
+    color:#1d1d1f;
+    text-decoration: underline;
+}
+.ac-ribbon__diwali-2024-content-copy.android-show{
+	margin:0;
+}
+.ribbon-diwali-2024 .ac-ribbon__diwali-2024 .ac-ribbon__diwali-2024-content-wrapper {
+	padding:9px 0;
+}
