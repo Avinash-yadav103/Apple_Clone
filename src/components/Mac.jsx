@@ -12,15 +12,16 @@ import imos from '../assets/imac_light.svg'
 import IntersectionViewer from './IntersectionViewer'
 import ad from '../assets/xlarge_2x.mp4'
 import GetToKnowSection from './GetToKnowSection'
+import './css/mac.css'
 
 function Mac(props) {
     return (
-        <div>
-            <Nav2 imone={imtwo} imthree={imthree} imfour={imfour} imfive={imfive} imsix={imsix} imseven={imseven} imeight={imeight} imos={imos} one="Macbook Air" two="Macbook Pro" three="Ipad" four="Mac Mini" five="compare" six="six" os="os" seven="iPad OS 18" eight="Shop" />
+        <div className="mac-container">
+            <Nav2 imone={imtwo} imthree={imthree} imfour={imfour} imfive={imfive} imsix={imsix} imseven={imseven} imeight={imeight} imos={imos} one="MacBook Air" two="MacBook Pro" three="iMac" four="Mac Mini" five="Mac Studio" six="Mac Pro" os="macOS" seven="Compare" eight="Shop" />
 
             <div className="banner_bar">
                 <h1>Mac</h1>
-                <p>If you can dream it <br />mac can do it</p>
+                <p>If you can dream it, <br />Mac can do it.</p>
             </div>
 
             <div className="ad_video">
@@ -34,10 +35,6 @@ function Mac(props) {
                                 display: 'flex',
                                 justifyContent: 'center',
                                 alignItems: 'center',
-                                // alignItems: 'center',
-                                // height: '300px',
-                                // width: isInView ? '95%' : '100%',
-                                // borderRadius: isInView ? '10px' : '0px',
                                 transition: 'all 1s ease',
                             }}
                         >
@@ -46,22 +43,57 @@ function Mac(props) {
                                 borderRadius: isInView ? '40px' : '0px',
                                 transition: 'all 0.7s ease-in-out',
                             }}>
-                                <source src={ad} type="video/mp4" style={{
-                                // width: isInView ? '95%' : '100%',
-                                borderRadius: isInView ? '10px' : '0px',
-                                transition: 'background-color 0.3s ease-in-out',
-                            }} />
-                                {/* Your browser does not support the video tag. */}
+                                <source src={ad} type="video/mp4" />
                             </video>
-                           
                         </div>
                     )}
                 </IntersectionViewer>
-
             </div>
-                
-            <GetToKnowSection />
 
+            {/* Mac Products Grid */}
+            <div className="mac-products-section">
+                <h2 className="mac-section-title">Explore the lineup.</h2>
+                <div className="mac-products-grid">
+                    <div className="mac-product-card">
+                        <div className="mac-product-icon">
+                            <img src={imtwo} alt="MacBook Air" />
+                        </div>
+                        <h3>MacBook Air</h3>
+                        <p className="mac-product-tagline">Strikingly thin and fast.</p>
+                        <p className="mac-product-price">From ₹114900.00</p>
+                        <button className="mac-buy-btn">Buy</button>
+                    </div>
+                    <div className="mac-product-card">
+                        <div className="mac-product-icon">
+                            <img src={imthree} alt="MacBook Pro" />
+                        </div>
+                        <h3>MacBook Pro</h3>
+                        <p className="mac-product-tagline">Mind-blowing. Head-turning.</p>
+                        <p className="mac-product-price">From ₹169900.00</p>
+                        <button className="mac-buy-btn">Buy</button>
+                    </div>
+                    <div className="mac-product-card">
+                        <div className="mac-product-icon">
+                            <img src={imos} alt="iMac" />
+                        </div>
+                        <h3>iMac</h3>
+                        <p className="mac-product-tagline">All-in-one. For all.</p>
+                        <p className="mac-product-price">From ₹134900.00</p>
+                        <button className="mac-buy-btn">Buy</button>
+                    </div>
+                    <div className="mac-product-card">
+                        <div className="mac-product-icon">
+                            <img src={imseven} alt="Mac Mini" />
+                        </div>
+                        <h3>Mac mini</h3>
+                        <p className="mac-product-tagline">More muscle. More hustle.</p>
+                        <p className="mac-product-price">From ₹59900.00</p>
+                        <button className="mac-buy-btn">Buy</button>
+                    </div>
+                </div>
+            </div>
+
+            <GetToKnowSection />
         </div>
     )
 }

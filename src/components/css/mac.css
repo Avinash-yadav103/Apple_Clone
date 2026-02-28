@@ -1,59 +1,106 @@
-.gt-top {
+.mac-container {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Mac Products Section */
+.mac-products-section {
+    padding: 80px 20px;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.mac-section-title {
+    font-size: 40px;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 50px;
+}
+
+.mac-products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.mac-product-card {
+    background: #f5f5f7;
+    border-radius: 20px;
+    padding: 40px 24px 32px;
     text-align: center;
-    padding: 20px;
-    background-color: #f5f5f5;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.gt-container{
-    margin: 10vh;
-    /* width: 100vw; */
-}
-
-.gt-top h1 {
-    font-size: 3em;
-    margin-bottom: 10px;
-}
-
-.gt-top p {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-}
-
-.gt-top button {
-    padding: 10px 20px;
-    font-size: 1em;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+        box-shadow 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
     cursor: pointer;
 }
 
-.gt-top button:hover {
-    background-color: #0056b3;
+.mac-product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
-.gt-mid {
-    padding: 20px;
+.mac-product-icon {
+    margin-bottom: 24px;
     display: flex;
-    gap: 30px;
-    overflow-x: scroll;
+    justify-content: center;
 }
 
+.mac-product-icon img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
 
+.mac-product-card h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin: 0 0 8px;
+}
 
+.mac-product-tagline {
+    font-size: 14px;
+    color: #6e6e73;
+    margin: 0 0 16px;
+    line-height: 1.5;
+}
 
+.mac-product-price {
+    font-size: 14px;
+    color: #1d1d1f;
+    font-weight: 500;
+    margin: 0 0 20px;
+}
 
+.mac-buy-btn {
+    background-color: #0071e3;
+    color: white;
+    border: none;
+    border-radius: 980px;
+    padding: 10px 22px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
 
-/* Get Cards*/
+.mac-buy-btn:hover {
+    background-color: #0062cc;
+    transform: scale(1.05);
+}
 
-.get_cards{
-    background-image: url("../../assets/displays.svg");
-    height: 700px;
-    width: 500px;
-    /* overflow: scroll; */
-    border-radius: 30px;
+/* Responsive */
+@media (max-width: 1024px) {
+    .mac-products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .mac-products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mac-section-title {
+        font-size: 28px;
+    }
 }

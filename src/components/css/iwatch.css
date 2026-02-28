@@ -1,0 +1,378 @@
+.watch-container {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.watch-hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  color: #fff;
+  position: relative;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.watch-hero.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-content {
+  z-index: 2;
+  text-align: center;
+  padding: 0 20px;
+  max-width: 600px;
+}
+
+.watch-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.watch-logo span {
+  font-size: 32px;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+.hero-content h2 {
+  font-size: 48px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.hero-content h3 {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+}
+
+.cta-buttons a {
+  color: #2997ff;
+  font-size: 21px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.cta-buttons a:hover {
+  text-decoration: underline;
+}
+
+.hero-image {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  max-height: 65%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.hero-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Features section */
+.watch-features {
+  padding: 80px 0;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  padding: 80px 40px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.feature.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.feature.reverse {
+  flex-direction: row-reverse;
+  background-color: #f5f5f7;
+}
+
+.feature-content {
+  flex: 1;
+  padding: 0 40px;
+}
+
+.feature-content h2 {
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.feature-content p {
+  font-size: 19px;
+  line-height: 1.5;
+  color: #86868b;
+}
+
+.feature-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.feature-image img {
+  width: 100%;
+  transition: transform 0.5s ease;
+}
+
+.feature:hover .feature-image img {
+  transform: scale(1.03);
+}
+
+/* Video feature */
+.video-feature {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  padding: 0;
+}
+
+.video-feature video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.feature-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%);
+}
+
+.feature-overlay h2 {
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.feature-overlay p {
+  font-size: 19px;
+  max-width: 600px;
+}
+
+/* Cases section */
+.watch-cases {
+  padding: 100px 40px;
+  text-align: center;
+  background-color: #f5f5f7;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.watch-cases.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.watch-cases h2 {
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 60px;
+}
+
+.case-carousel {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.case-item {
+  flex: 0 0 250px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.case-item:hover {
+  transform: translateY(-10px);
+}
+
+.case-image {
+  width: 100%;
+  height: 250px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.case-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.case-item:hover .case-image img {
+  transform: scale(1.1);
+}
+
+.case-item h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.case-item p {
+  font-size: 16px;
+  color: #86868b;
+}
+
+/* Health section */
+.watch-health {
+  padding: 100px 40px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.watch-health.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.health-intro {
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+
+.health-intro h2 {
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.health-intro p {
+  font-size: 19px;
+  color: #86868b;
+}
+
+.health-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.health-item {
+  padding: 30px;
+  border-radius: 18px;
+  background-color: #f5f5f7;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.health-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.health-icon {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.health-item h3 {
+  font-size: 21px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.health-item p {
+  font-size: 16px;
+  color: #86868b;
+}
+
+/* CTA section */
+.watch-cta {
+  padding: 100px 40px;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.watch-cta.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.watch-cta h2 {
+  font-size: 48px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.watch-cta p {
+  font-size: 21px;
+  margin-bottom: 30px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 990px) {
+  .feature, .feature.reverse {
+    flex-direction: column;
+    padding: 60px 20px;
+  }
+  
+  .feature-content {
+    padding: 0 20px 40px;
+    text-align: center;
+  }
+  
+  .hero-content h2 {
+    font-size: 36px;
+  }
+  
+  .hero-content h3 {
+    font-size: 20px;
+  }
+  
+  .case-carousel {
+    gap: 20px;
+  }
+  
+  .watch-logo span {
+    font-size: 28px;
+  }
+}

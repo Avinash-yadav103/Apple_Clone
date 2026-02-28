@@ -1,0 +1,206 @@
+.support-page {
+    width: 100%;
+    overflow-x: hidden;
+    background-color: #fff;
+    color: #1d1d1f;
+}
+
+.sup-hero {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="%23f5f5f7"/><stop offset="100%" stop-color="%23e8e8ed"/></linearGradient></defs><rect width="100" height="100" fill="url(%23g)"/></svg>') center/cover no-repeat;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.sup-hero.sup-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.sup-hero-content {
+    max-width: 800px;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.sup-hero h1 {
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-weight: 600;
+    margin-bottom: 40px;
+    letter-spacing: -0.02em;
+}
+
+.sup-search-container {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.sup-search-input {
+    width: 100%;
+    padding: 20px 20px 20px 50px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    font-family: inherit;
+    transition: box-shadow 0.3s ease;
+    outline: none;
+}
+
+.sup-search-input:focus {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12), 0 0 0 2px #0071e3;
+}
+
+.sup-search-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.sup-products {
+    padding: 80px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.sup-products.sup-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.sup-products-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+}
+
+.sup-product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 12px;
+    padding: 20px 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.sup-product-card:hover {
+    background: #f5f5f7;
+    transform: scale(1.05);
+}
+
+.sup-product-card h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 12px;
+}
+
+.sup-get-support {
+    padding: 80px 20px;
+    background: #f5f5f7;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.sup-get-support.sup-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.sup-support-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sup-get-support h2 {
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.sup-get-support>p {
+    font-size: 20px;
+    color: #6e6e73;
+    margin-bottom: 60px;
+}
+
+.sup-contact-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.sup-contact-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.sup-contact-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.sup-contact-card h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.sup-contact-card p {
+    font-size: 16px;
+    color: #6e6e73;
+    margin-bottom: 30px;
+    flex-grow: 1;
+}
+
+.sup-btn {
+    background: transparent;
+    color: #0071e3;
+    border: 1px solid #0071e3;
+    padding: 10px 20px;
+    border-radius: 980px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sup-btn:hover {
+    background: #0071e3;
+    color: #fff;
+}
+
+@media (max-width: 900px) {
+    .sup-products-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .sup-contact-options {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 500px) {
+    .sup-products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
