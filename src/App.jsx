@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect } from 'react'
 import './App.css'
 import Nav from './components/Nav.jsx'
 import Home from './components/Home.jsx'
 import Ipad from './components/Ipad.jsx'
 import Nav2 from './components/Nav2.jsx'
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import IpadAir from './components/IpadAir.jsx'
 import "./components/css/ipad.css"
 import Mac from './components/Mac.jsx'
@@ -17,11 +17,20 @@ import Accessories from './components/Accessories.jsx'
 import Support from './components/Support.jsx'
 import Footer from './components/Footer.jsx'
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
+
 function App() {
   return (
     <>
       <div className="whole">
         <Nav />
+        <ScrollToTop />
 
         <Routes>
           <Route path="/" element={<Home />} />

@@ -1,3 +1,4 @@
+/* ── Support Page ────────────────────────────────────── */
 .support-page {
     width: 100%;
     overflow-x: hidden;
@@ -5,17 +6,29 @@
     color: #1d1d1f;
 }
 
+/* ── Section title ───────────────────────────────────── */
+.sup-section-title {
+    font-size: 36px;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 36px;
+    text-align: center;
+    letter-spacing: -0.02em;
+}
+
+/* ── Hero ─────────────────────────────────────────────── */
 .sup-hero {
-    height: 400px;
+    min-height: 420px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="%23f5f5f7"/><stop offset="100%" stop-color="%23e8e8ed"/></linearGradient></defs><rect width="100" height="100" fill="url(%23g)"/></svg>') center/cover no-repeat;
+    background: linear-gradient(180deg, #f5f5f7 0%, #fff 100%);
+    padding: 80px 20px 40px;
     opacity: 0;
     transform: translateY(30px);
-    transition: all 0.8s ease;
+    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .sup-hero.sup-visible {
@@ -24,56 +37,95 @@
 }
 
 .sup-hero-content {
-    max-width: 800px;
+    max-width: 680px;
     width: 100%;
-    padding: 0 20px;
 }
 
 .sup-hero h1 {
-    font-size: clamp(3rem, 6vw, 4.5rem);
-    font-weight: 600;
-    margin-bottom: 40px;
-    letter-spacing: -0.02em;
+    font-size: clamp(2.8rem, 5vw, 4rem);
+    font-weight: 700;
+    margin-bottom: 32px;
+    letter-spacing: -0.03em;
+    color: #1d1d1f;
 }
 
+/* ── Search ──────────────────────────────────────────── */
 .sup-search-container {
     position: relative;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.sup-search-input {
-    width: 100%;
-    padding: 20px 20px 20px 50px;
-    font-size: 1.2rem;
-    border: none;
+    max-width: 580px;
+    margin: 0 auto 24px;
+    display: flex;
+    align-items: center;
+    background: #fff;
     border-radius: 12px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-    font-family: inherit;
-    transition: box-shadow 0.3s ease;
-    outline: none;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+    border: 2px solid transparent;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-.sup-search-input:focus {
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12), 0 0 0 2px #0071e3;
+.sup-search-container.sup-search-focused {
+    box-shadow: 0 8px 36px rgba(0, 0, 0, 0.1);
+    border-color: #0071e3;
 }
 
 .sup-search-icon {
     position: absolute;
-    left: 20px;
+    left: 18px;
     top: 50%;
     transform: translateY(-50%);
     pointer-events: none;
-    opacity: 0.5;
+    display: flex;
 }
 
+.sup-search-input {
+    width: 100%;
+    padding: 18px 20px 18px 48px;
+    font-size: 17px;
+    border: none;
+    border-radius: 12px;
+    font-family: inherit;
+    outline: none;
+    background: transparent;
+    color: #1d1d1f;
+}
+
+.sup-search-input::placeholder {
+    color: #86868b;
+}
+
+/* ── Quick links ─────────────────────────────────────── */
+.sup-quick-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.sup-quick-link {
+    font-size: 13px;
+    color: #0071e3;
+    cursor: pointer;
+    padding: 6px 14px;
+    border-radius: 980px;
+    background: rgba(0, 113, 227, 0.06);
+    transition: background 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
+}
+
+.sup-quick-link:hover {
+    background: #0071e3;
+    color: #fff;
+}
+
+/* ── Product Grid ────────────────────────────────────── */
 .sup-products {
-    padding: 80px 20px;
-    max-width: 1000px;
+    padding: 60px 20px 40px;
+    max-width: 900px;
     margin: 0 auto;
     opacity: 0;
     transform: translateY(30px);
-    transition: all 0.8s ease;
+    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .sup-products.sup-visible {
@@ -82,39 +134,132 @@
 }
 
 .sup-products-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
 .sup-product-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 12px;
-    padding: 20px 10px;
+    border-radius: 16px;
+    padding: 24px 20px;
     cursor: pointer;
-    transition: background 0.3s ease, transform 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    min-width: 100px;
 }
 
 .sup-product-card:hover {
     background: #f5f5f7;
-    transform: scale(1.05);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+.sup-product-icon {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.sup-product-icon span {
+    font-size: 40px;
 }
 
 .sup-product-card h3 {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
-    margin-top: 12px;
+    margin: 0;
+    color: #1d1d1f;
 }
 
+/* ── Popular Topics ──────────────────────────────────── */
+.sup-topics {
+    padding: 60px 20px 80px;
+    max-width: 1080px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.sup-topics.sup-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.sup-topics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.sup-topic-card {
+    background: #f5f5f7;
+    border-radius: 20px;
+    padding: 32px 28px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
+}
+
+.sup-topic-card.sup-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.sup-topic-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+.sup-topic-icon {
+    font-size: 32px;
+    display: block;
+    margin-bottom: 14px;
+}
+
+.sup-topic-card h3 {
+    font-size: 19px;
+    font-weight: 600;
+    margin: 0 0 8px;
+    color: #1d1d1f;
+}
+
+.sup-topic-card p {
+    font-size: 14px;
+    color: #6e6e73;
+    line-height: 1.5;
+    margin: 0 0 16px;
+}
+
+.sup-topic-link {
+    font-size: 14px;
+    color: #0071e3;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.sup-topic-card:hover .sup-topic-link {
+    color: #0062cc;
+}
+
+/* ── Contact Support ─────────────────────────────────── */
 .sup-get-support {
     padding: 80px 20px;
     background: #f5f5f7;
     text-align: center;
     opacity: 0;
     transform: translateY(30px);
-    transition: all 0.8s ease;
+    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .sup-get-support.sup-visible {
@@ -123,65 +268,82 @@
 }
 
 .sup-support-content {
-    max-width: 1200px;
+    max-width: 1080px;
     margin: 0 auto;
 }
 
 .sup-get-support h2 {
     font-size: 40px;
     font-weight: 600;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
+    letter-spacing: -0.02em;
 }
 
-.sup-get-support>p {
-    font-size: 20px;
+.sup-support-subtitle {
+    font-size: 19px;
     color: #6e6e73;
-    margin-bottom: 60px;
+    margin-bottom: 48px;
 }
 
 .sup-contact-options {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 24px;
 }
 
 .sup-contact-card {
     background: #fff;
     border-radius: 20px;
-    padding: 40px 30px;
+    padding: 44px 30px 36px;
     display: flex;
     flex-direction: column;
     align-items: center;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.sup-contact-icon {
-    font-size: 40px;
+.sup-contact-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+.sup-contact-icon-wrap {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgba(0, 113, 227, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 20px;
 }
 
 .sup-contact-card h3 {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 600;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
 }
 
 .sup-contact-card p {
-    font-size: 16px;
+    font-size: 15px;
     color: #6e6e73;
-    margin-bottom: 30px;
+    margin-bottom: 24px;
     flex-grow: 1;
+    line-height: 1.5;
 }
 
 .sup-btn {
     background: transparent;
     color: #0071e3;
-    border: 1px solid #0071e3;
-    padding: 10px 20px;
+    border: 1.5px solid #0071e3;
+    padding: 11px 24px;
     border-radius: 980px;
-    font-size: 16px;
+    font-size: 15px;
+    font-weight: 500;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+    font-family: inherit;
 }
 
 .sup-btn:hover {
@@ -189,18 +351,46 @@
     color: #fff;
 }
 
-@media (max-width: 900px) {
+/* ── Responsive ──────────────────────────────────────── */
+@media (max-width: 1024px) {
+    .sup-topics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .sup-hero {
+        min-height: 360px;
+        padding: 60px 20px 30px;
+    }
+
+    .sup-section-title {
+        font-size: 28px;
+    }
+
     .sup-products-grid {
-        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+
+    .sup-product-card {
+        min-width: 80px;
+        padding: 16px 12px;
+    }
+
+    .sup-topics-grid {
+        grid-template-columns: 1fr;
     }
 
     .sup-contact-options {
         grid-template-columns: 1fr;
     }
-}
 
-@media (max-width: 500px) {
-    .sup-products-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .sup-quick-links {
+        gap: 6px;
+    }
+
+    .sup-quick-link {
+        font-size: 12px;
+        padding: 5px 10px;
     }
 }

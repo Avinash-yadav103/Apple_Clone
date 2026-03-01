@@ -1,12 +1,14 @@
+/* ── Home Page ────────────────────────────────────────── */
 .home-container {
   width: 100%;
   overflow-x: hidden;
+  background: #000;
 }
 
 /* ===== HERO SECTION ===== */
 .hero-section {
   height: 100vh;
-  min-height: 600px;
+  min-height: 640px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,42 +22,71 @@
 
 .hero-content {
   z-index: 2;
-  max-width: 800px;
+  max-width: 680px;
   padding: 0 20px;
   position: relative;
 }
 
 .hero-content h1 {
   font-size: 56px;
-  font-weight: 600;
-  margin-bottom: 6px;
-  letter-spacing: -0.02em;
+  font-weight: 700;
+  margin-bottom: 4px;
+  letter-spacing: -0.03em;
+  background: linear-gradient(90deg, #f5f5f7, #a1a1a6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .hero-content h2 {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 400;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   color: #86868b;
 }
 
 .cta-buttons {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 20px;
 }
 
-.cta-buttons a,
-.cta-buttons .learn-more,
-.cta-buttons .buy-link {
-  color: #2997ff;
-  font-size: 21px;
+.learn-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #0071e3;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
   text-decoration: none;
-  transition: all 0.2s ease;
+  padding: 12px 28px;
+  border-radius: 980px;
+  transition: background 0.3s ease;
 }
 
-.cta-buttons a:hover {
-  text-decoration: underline;
+.learn-more-btn:hover {
+  background: #0062cc;
+}
+
+.buy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  color: #2997ff;
+  font-size: 17px;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 12px 28px;
+  border-radius: 980px;
+  border: 1.5px solid #2997ff;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.buy-btn:hover {
+  background: #2997ff;
+  color: #fff;
 }
 
 .hero-image {
@@ -65,14 +96,14 @@
   width: 100%;
   height: 100%;
   z-index: 1;
-  opacity: 0.45;
+  opacity: 0.35;
 }
 
 .hero-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center top;
 }
 
 /* ===== PRODUCT GRID ===== */
@@ -92,7 +123,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding: 60px 20px;
+  padding: 56px 20px 20px;
   text-align: center;
   color: #1d1d1f;
   transition: transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -103,7 +134,7 @@
 }
 
 .grid-item.ipad {
-  background: linear-gradient(180deg, #e8f0fe 0%, #d4e4f7 100%);
+  background: linear-gradient(180deg, #d8e8f8 0%, #c0d8f0 100%);
 }
 
 .grid-item.watch {
@@ -117,6 +148,11 @@
 
 .grid-item.airpods {
   background: linear-gradient(180deg, #fafafa 0%, #f0f0f2 100%);
+}
+
+.content-wrapper {
+  z-index: 2;
+  position: relative;
 }
 
 .grid-item h2 {
@@ -142,14 +178,16 @@
 
 .grid-item .links {
   display: flex;
-  gap: 30px;
+  gap: 28px;
   margin-top: 12px;
+  justify-content: center;
 }
 
 .grid-item .links a {
   color: #2997ff;
   text-decoration: none;
   font-size: 17px;
+  font-weight: 500;
   transition: opacity 0.2s ease;
 }
 
@@ -176,6 +214,167 @@
 
 .grid-item:hover .image-wrapper img {
   transform: scale(1.06);
+}
+
+/* ── CSS Product Illustrations ───────────────────────── */
+
+/* iPad */
+.home-css-ipad {
+  width: 200px;
+  height: 280px;
+  background: #1d1d1f;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  transition: transform 0.6s ease;
+}
+
+.grid-item:hover .home-css-ipad {
+  transform: perspective(600px) rotateY(-5deg);
+}
+
+.home-ipad-screen {
+  width: 184px;
+  height: 264px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #5e5ce6, #bf5af2, #ff6482);
+}
+
+/* Watch */
+.home-css-watch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: watchFloat 3s ease-in-out infinite;
+}
+
+@keyframes watchFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.home-watch-body {
+  width: 100px;
+  height: 120px;
+  background: linear-gradient(145deg, #e0e0e0, #b0b0b0);
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.home-watch-screen {
+  width: 80px;
+  height: 96px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #30d158, #007aff, #ff9f0a);
+}
+
+.home-watch-crown {
+  position: absolute;
+  right: -8px;
+  top: 36px;
+  width: 6px;
+  height: 20px;
+  background: #c0c0c0;
+  border-radius: 3px;
+}
+
+/* MacBook */
+.home-css-macbook {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.6s ease;
+}
+
+.grid-item:hover .home-css-macbook {
+  transform: perspective(600px) rotateX(3deg);
+}
+
+.home-mac-screen {
+  width: 220px;
+  height: 150px;
+  background: #1d1d1f;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.home-mac-screen::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 12px;
+  right: 12px;
+  bottom: 8px;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #0a84ff, #5e5ce6, #bf5af2);
+}
+
+.home-mac-notch {
+  width: 20px;
+  height: 5px;
+  background: #000;
+  border-radius: 0 0 4px 4px;
+  z-index: 1;
+}
+
+.home-mac-base {
+  width: 250px;
+  height: 10px;
+  background: linear-gradient(to bottom, #b8b8ba, #d4d4d6);
+  border-radius: 0 0 6px 6px;
+}
+
+/* AirPods */
+.home-css-airpods {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+}
+
+.home-airpod-left,
+.home-airpod-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: airpodFloat 2.5s ease-in-out infinite;
+}
+
+.home-airpod-right {
+  animation-delay: 0.3s;
+}
+
+@keyframes airpodFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.home-airpod-left::before,
+.home-airpod-right::before {
+  content: '';
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(145deg, #f5f5f7, #d8d8da);
+  border-radius: 50%;
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.home-airpod-stem {
+  width: 8px;
+  height: 36px;
+  background: linear-gradient(145deg, #f5f5f7, #d8d8da);
+  border-radius: 0 0 4px 4px;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.06);
 }
 
 /* ===== PROMO SECTION ===== */
@@ -213,8 +412,25 @@
   text-align: center;
 }
 
+.promo-banner.services-banner {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2d1b4e 100%);
+  color: #fff;
+  justify-content: center;
+  text-align: center;
+}
+
+.promo-tag {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #86868b;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+
 .promo-content {
-  max-width: 400px;
+  max-width: 460px;
 }
 
 .promo-content h2 {
@@ -235,12 +451,14 @@
 .promo-links {
   display: flex;
   gap: 24px;
+  justify-content: inherit;
 }
 
 .promo-links a {
   color: #2997ff;
   text-decoration: none;
   font-size: 17px;
+  font-weight: 500;
 }
 
 .promo-links a:hover {
@@ -249,7 +467,7 @@
 
 .promo-image {
   flex-shrink: 0;
-  max-width: 400px;
+  max-width: 380px;
 }
 
 .promo-image img {
@@ -260,6 +478,54 @@
 
 .promo-banner:hover .promo-image img {
   transform: scale(1.05);
+}
+
+/* ===== SHOP CTA ===== */
+.home-shop-cta {
+  padding: 80px 20px;
+  text-align: center;
+  background: #f5f5f7;
+  border-radius: 20px;
+  margin: 0 12px 12px;
+}
+
+.home-shop-cta h2 {
+  font-size: 40px;
+  font-weight: 600;
+  color: #1d1d1f;
+  margin-bottom: 36px;
+  letter-spacing: -0.02em;
+}
+
+.home-shop-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.home-shop-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  padding: 14px 28px;
+  border-radius: 980px;
+  text-decoration: none;
+  color: #1d1d1f;
+  font-size: 17px;
+  font-weight: 500;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.home-shop-pill:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.home-shop-emoji {
+  font-size: 22px;
 }
 
 /* ===== SCROLL ANIMATIONS ===== */
@@ -273,6 +539,28 @@
 .animate-on-scroll.animated {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Hero fade-in animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-400 {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ===== RESPONSIVE ===== */
@@ -305,7 +593,11 @@
   }
 
   .promo-image {
-    max-width: 300px;
+    max-width: 280px;
+  }
+
+  .home-shop-cta h2 {
+    font-size: 32px;
   }
 }
 
@@ -325,5 +617,16 @@
 
   .promo-content h2 {
     font-size: 36px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .home-shop-pill {
+    padding: 12px 20px;
+    font-size: 15px;
   }
 }

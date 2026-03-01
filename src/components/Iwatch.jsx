@@ -1,38 +1,87 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import Nav2 from './Nav2'
-import imone from '../assets/Watch/watch_01.svg'
-import imtwo from '../assets/Watch/watch_02.svg'
-import imthree from '../assets/Watch/watch_03.svg'
-import imfour from '../assets/Watch/watch_04.svg'
-import imfive from '../assets/Watch/watch_05.svg'
-import imsix from '../assets/Watch/watch_06.svg'
-import imseven from '../assets/Watch/watch_07.svg'
-import imeight from '../assets/Watch/watch_08.svg'
-import imos from '../assets/Watch/watch_09.svg'
 import IntersectionViewer from './IntersectionViewer'
 import ad from '../assets/Watch/xlarge_2x.mp4'
 import GetToKnowSection from './GetToKnowSection'
 import './css/watch.css'
-import watchSeries9 from '../assets/Watch/watch_01.svg'
-import watchUltra2 from '../assets/Watch/watch_01.svg'
-import watchSE from '../assets/Watch/watch_01.svg'
+
+// Safe icon imports
+let imone, imtwo, imthree, imfour, imfive, imsix, imseven, imeight, imos;
+try { imone = new URL('../assets/Watch/watch_01.svg', import.meta.url).href } catch(e) { imone = '' }
+try { imtwo = new URL('../assets/Watch/watch_02.svg', import.meta.url).href } catch(e) { imtwo = '' }
+try { imthree = new URL('../assets/Watch/watch_03.svg', import.meta.url).href } catch(e) { imthree = '' }
+try { imfour = new URL('../assets/Watch/watch_04.svg', import.meta.url).href } catch(e) { imfour = '' }
+try { imfive = new URL('../assets/Watch/watch_05.svg', import.meta.url).href } catch(e) { imfive = '' }
+try { imsix = new URL('../assets/Watch/watch_06.svg', import.meta.url).href } catch(e) { imsix = '' }
+try { imseven = new URL('../assets/Watch/watch_07.svg', import.meta.url).href } catch(e) { imseven = '' }
+try { imeight = new URL('../assets/Watch/watch_08.svg', import.meta.url).href } catch(e) { imeight = '' }
+try { imos = new URL('../assets/Watch/watch_09.svg', import.meta.url).href } catch(e) { imos = '' }
 
 function Iwatch() {
-    // Parallax scroll effect
-    useEffect(() => {
-        const handleScroll = () => {
-            const scrollY = window.scrollY;
-            const watchElements = document.querySelectorAll('.watch-parallax');
-            
-            watchElements.forEach((element, index) => {
-                const speed = 0.1 + (index * 0.05);
-                element.style.transform = `translateY(${scrollY * speed}px)`;
-            });
-        };
+    const sectionRefs = useRef([]);
 
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('watch-visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        sectionRefs.current.forEach(ref => {
+            if (ref) observer.observe(ref);
+        });
+
+        return () => observer.disconnect();
     }, []);
+
+    const watches = [
+        {
+            name: 'Apple Watch Series 10',
+            tagline: 'Thinstant classic.',
+            price: '₹46900.00',
+            dark: true,
+            colors: [
+                { name: 'Jet Black', color: '#1d1d1f' },
+                { name: 'Rose Gold', color: '#e8c4b8' },
+                { name: 'Silver', color: '#e3e4e5' },
+            ],
+            features: ['Biggest display ever', 'Advanced health sensors', 'S10 SiP', 'Water resistant 50m'],
+            watchColor: '#1d1d1f',
+            bandColor: '#333',
+            screenGradient: ['#ff6b6b', '#ee5a24'],
+        },
+        {
+            name: 'Apple Watch Ultra 2',
+            tagline: 'Next level adventure.',
+            price: '₹89900.00',
+            dark: false,
+            colors: [
+                { name: 'Natural Titanium', color: '#c4bfb6' },
+                { name: 'Black Titanium', color: '#3c3b37' },
+            ],
+            features: ['49mm titanium case', '3000 nit display', 'Precision GPS', '36-hour battery'],
+            watchColor: '#c4bfb6',
+            bandColor: '#f97316',
+            screenGradient: ['#f97316', '#ea580c'],
+        },
+        {
+            name: 'Apple Watch SE',
+            tagline: 'A great deal to love.',
+            price: '₹29900.00',
+            dark: false,
+            colors: [
+                { name: 'Midnight', color: '#2e2e30' },
+                { name: 'Starlight', color: '#f3f0e8' },
+                { name: 'Silver', color: '#e3e4e5' },
+            ],
+            features: ['Crash Detection', 'Heart rate alerts', 'Fitness tracking', 'swimproof'],
+            watchColor: '#e3e4e5',
+            bandColor: '#86868b',
+            screenGradient: ['#34c759', '#30d158'],
+        },
+    ];
 
     return (
         <div className="watch-container">
@@ -45,24 +94,24 @@ function Iwatch() {
                 imseven={imseven} 
                 imeight={imeight} 
                 imos={imos} 
-                one="Apple Watch Series 9" 
+                one="Apple Watch Series 10" 
                 two="Apple Watch Ultra 2" 
                 three="Apple Watch SE" 
-                four="Apple Watch Nike" 
-                five="Apple Watch Hermès" 
-                six="Apple Watch Studio" 
-                seven="Compare" 
-                eight="Shop"
+                four="Compare" 
+                five="Apple Watch Nike" 
+                six="Apple Watch Hermès" 
+                seven="AirPods" 
+                eight="Accessories"
             />
 
             <div className="banner_bar">
                 <h1>Apple Watch</h1>
-                <p>A healthy leap ahead</p>
+                <p>The ultimate device for a healthy life.</p>
             </div>
 
             <div className="ad_video">
                 <IntersectionViewer
-                    onIntersect={() => console.log('Element is in view!')}
+                    onIntersect={() => {}}
                     options={{ rootMargin: '0px', threshold: 0.5 }}
                 >
                     {(isInView) => (
@@ -86,86 +135,93 @@ function Iwatch() {
                 </IntersectionViewer>
             </div>
 
-            <div className="watch-showcase">
-                <div className="watch-product watch-parallax">
-                    <div className="watch-image-container">
-                        <img 
-                            src={watchSeries9} 
-                            alt="Apple Watch Series 9" 
-                            className="watch-image"
-                            style={{
-                                transition: 'transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1)'
-                            }}
-                            onMouseEnter={(e) => e.target.style.transform = 'scale(1.05) rotate(5deg)'}
-                            onMouseLeave={(e) => e.target.style.transform = 'scale(1) rotate(0deg)'}
-                        />
-                    </div>
-                    <div className="watch-details">
-                        <h2>Apple Watch Series 9</h2>
-                        <p className="watch-tagline">Smarter. Brighter. Mightier.</p>
-                        <p className="watch-price">From ₹41900.00</p>
-                        <div className="watch-colors">
-                            <span className="color-dot silver"></span>
-                            <span className="color-dot gold"></span>
-                            <span className="color-dot graphite"></span>
-                            <span className="color-dot midnight"></span>
-                            <span className="color-dot starlight"></span>
-                        </div>
-                        <button className="watch-buy-button">Buy</button>
-                        <p className="watch-learn-more">Learn more </p>
-                    </div>
+            <div className="watch-explore-section">
+                <div className="watch-explore-header">
+                    <h2>Explore the lineup.</h2>
                 </div>
 
-                <div className="watch-product watch-parallax">
-                    <div className="watch-image-container">
-                        <img 
-                            src={watchUltra2} 
-                            alt="Apple Watch Ultra 2" 
-                            className="watch-image"
-                            style={{
-                                transition: 'transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1)'
-                            }}
-                            onMouseEnter={(e) => e.target.style.transform = 'scale(1.05) rotate(-5deg)'}
-                            onMouseLeave={(e) => e.target.style.transform = 'scale(1) rotate(0deg)'}
-                        />
-                    </div>
-                    <div className="watch-details">
-                        <h2>Apple Watch Ultra 2</h2>
-                        <p className="watch-tagline">Next level adventure.</p>
-                        <p className="watch-price">From ₹89900.00</p>
-                        <div className="watch-colors">
-                            <span className="color-dot titanium"></span>
-                        </div>
-                        <button className="watch-buy-button">Buy</button>
-                        <p className="watch-learn-more">Learn more</p>
-                    </div>
-                </div>
+                <div className="watch-lineup-grid">
+                    {watches.map((watch, index) => (
+                        <div
+                            key={watch.name}
+                            className={`watch-lineup-card ${watch.dark ? 'dark' : 'light'}`}
+                            ref={el => sectionRefs.current[index] = el}
+                        >
+                            {/* CSS Watch illustration */}
+                            <div className="watch-card-visual">
+                                <div className="watch-illustration">
+                                    <div className="watch-case" style={{ background: watch.watchColor }}>
+                                        <div className="watch-crown"></div>
+                                        <div className="watch-screen">
+                                            <div className="watch-screen-content" style={{
+                                                background: `linear-gradient(135deg, ${watch.screenGradient[0]}, ${watch.screenGradient[1]})`
+                                            }}>
+                                                <span className="watch-time">10:09</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="watch-band-top" style={{ background: watch.bandColor }}></div>
+                                    <div className="watch-band-bottom" style={{ background: watch.bandColor }}></div>
+                                </div>
+                            </div>
 
-                <div className="watch-product watch-parallax">
-                    <div className="watch-image-container">
-                        <img 
-                            src={watchSE} 
-                            alt="Apple Watch SE" 
-                            className="watch-image"
-                            style={{
-                                transition: 'transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1)'
-                            }}
-                            onMouseEnter={(e) => e.target.style.transform = 'scale(1.05) rotate(5deg)'}
-                            onMouseLeave={(e) => e.target.style.transform = 'scale(1) rotate(0deg)'}
-                        />
-                    </div>
-                    <div className="watch-details">
-                        <h2>Apple Watch SE</h2>
-                        <p className="watch-tagline">A great deal to love.</p>
-                        <p className="watch-price">From ₹29900.00</p>
-                        <div className="watch-colors">
-                            <span className="color-dot midnight"></span>
-                            <span className="color-dot starlight"></span>
-                            <span className="color-dot silver"></span>
+                            <div className="watch-card-colors">
+                                {watch.colors.map(c => (
+                                    <span
+                                        key={c.name}
+                                        className="watch-color-dot"
+                                        style={{ backgroundColor: c.color }}
+                                        title={c.name}
+                                    />
+                                ))}
+                            </div>
+
+                            <div className="watch-card-info">
+                                <h3>{watch.name}</h3>
+                                <p className="watch-card-tagline">{watch.tagline}</p>
+                                <p className="watch-card-price">From {watch.price}</p>
+                            </div>
+
+                            <div className="watch-card-features">
+                                {watch.features.map(f => (
+                                    <span key={f} className="watch-feature-tag">{f}</span>
+                                ))}
+                            </div>
+
+                            <div className="watch-card-actions">
+                                <button className="watch-buy-btn">Buy</button>
+                                <span className="watch-learn-link">Learn more →</span>
+                            </div>
                         </div>
-                        <button className="watch-buy-button">Buy</button>
-                        <p className="watch-learn-more">Learn more </p>
-                    </div>
+                    ))}
+                </div>
+            </div>
+
+            {/* Health features section */}
+            <div className="watch-health-section">
+                <h2 className="watch-health-title" ref={el => sectionRefs.current[3] = el}>
+                    Health is in your hands. <span>And on your wrist.</span>
+                </h2>
+
+                <div className="watch-health-grid">
+                    {[
+                        { icon: '❤️', title: 'Heart Rate', desc: 'Get notifications for unusual heart rhythms and measure your blood oxygen.' },
+                        { icon: '🌡️', title: 'Temperature', desc: 'Track your wrist temperature for cycle tracking and sleep insights.' },
+                        { icon: '🫁', title: 'Blood Oxygen', desc: 'Measure your blood oxygen level anytime with a powerful sensor.' },
+                        { icon: '😴', title: 'Sleep Tracking', desc: 'Track your sleep stages and build a better bedtime routine.' },
+                        { icon: '🏃', title: 'Fitness', desc: 'Close your Activity rings every day and celebrate achievements.' },
+                        { icon: '🆘', title: 'Safety', desc: 'Fall Detection and Crash Detection get help when you need it.' },
+                    ].map((feature, i) => (
+                        <div
+                            key={feature.title}
+                            className="watch-health-card"
+                            ref={el => sectionRefs.current[4 + i] = el}
+                        >
+                            <span className="watch-health-icon">{feature.icon}</span>
+                            <h4>{feature.title}</h4>
+                            <p>{feature.desc}</p>
+                        </div>
+                    ))}
                 </div>
             </div>
 

@@ -23,11 +23,11 @@ function Footer() {
                     <div className="footer-column">
                         <h3 className="footer-column-title">Services</h3>
                         <ul className="footer-column-list">
-                            <li><a href="#">Apple Music</a></li>
-                            <li><a href="#">Apple TV+</a></li>
-                            <li><a href="#">Apple Arcade</a></li>
-                            <li><a href="#">iCloud</a></li>
-                            <li><a href="#">Apple One</a></li>
+                            <li><Link to="/entertainment">Apple Music</Link></li>
+                            <li><Link to="/tv">Apple TV+</Link></li>
+                            <li><Link to="/entertainment">Apple Arcade</Link></li>
+                            <li><Link to="/entertainment">iCloud</Link></li>
+                            <li><Link to="/entertainment">Apple One</Link></li>
                             <li><a href="#">Apple Card</a></li>
                         </ul>
                     </div>
@@ -41,7 +41,7 @@ function Footer() {
                             <li><a href="#">Apple Camp</a></li>
                             <li><a href="#">Financing</a></li>
                             <li><a href="#">Order Status</a></li>
-                            <li><a href="#">Shopping Help</a></li>
+                            <li><Link to="/accessories">Shopping Help</Link></li>
                         </ul>
                     </div>
 
